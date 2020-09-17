@@ -12,7 +12,7 @@ function setTeachersNames(teachersName) {
 
   return teachers;
 }
-console.log("Chris")
+console.log(setTeachersNames("Chris"))
 
 /*** return the sum of both arguments  ***/
 function add(a, b) {
