@@ -24,13 +24,13 @@ console.log(add(5,6))
 
 /*** Using the increment operator, add a year to the argument and make me older */
 function ageMeByAYear(age) {
-  return age+=1;
+  return ++age;
 }
 console.log(ageMeByAYear(33))
 
 /*** Using the decrement operator make me age decrement by a year  ***/
 function makeMeYoungerByAYear(age) {
-  return age-=1;
+  return --age;
 }
 console.log(makeMeYoungerByAYear(33))
 
@@ -91,7 +91,7 @@ console.log(getLastCharacter("Awesome"))
  */
 
 function getLastWordInPlaceName(place) {
-  let newPlace = place.slice(place.indexOf(' ') - place.length);
+  let newPlace = place.slice(place.indexOf(' ') - place.length + 1);
 
   return newPlace;
 }
