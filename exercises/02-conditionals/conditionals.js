@@ -4,7 +4,7 @@
  *
  */
 function compareEquality(a, b) {
-  if (a == b) {
+  if (a === b) {
     // Change this line
     return "Equal";
   }
@@ -25,7 +25,7 @@ function compareEquality(a, b) {
 
 function testStrictNotEqual(a, b) {
   // Only Change Code Below this Line
-  if (undefined) {
+  if (a !== b) {
     // Only Change Code Above this Line
 
     return "Not Equal";
@@ -47,13 +47,19 @@ function testStrictNotEqual(a, b) {
 
 function testLogicalAnd(num) {
   // code here
-  if (num <= 6 && num <= 9) {
+  if (num >= 6 && num <= 9) {
     return "Yes";
   } else if (num === 10) {
     return "No";
   }
   return "No";
 }
+console.log(testLogicalAnd(5))
+console.log(testLogicalAnd(6))
+console.log(testLogicalAnd(7))
+console.log(testLogicalAnd(8))
+console.log(testLogicalAnd(9))
+console.log(testLogicalAnd(10))
 
 /**
  * Refactor the code down below to use the logical || operator
@@ -65,12 +71,24 @@ function testLogicalAnd(num) {
  */
 
 function testLogicalOr(num) {
-  // code here
+  if(num === 25 || num === 20){
+    return "Yes";
+  } else if (num === 0) {
+    return "No";
+  } else {
+    console.log("Please enter 0, 20, or 25")
+  }
 }
 
 /** Using the modulus operator determine if the argument is an even or odd number */
 
 function isEvenOrOdd(isEven) {
+  if(isEven % 2 === 0) {
+    isEven = true
+  } else {
+    isEven = false
+  }
+
   return isEven;
 }
 
@@ -91,7 +109,43 @@ function isEvenOrOdd(isEven) {
  * 
  *  *****/
 
-function caseInSwitch(num) {}
+function caseInSwitch(num) {
+  switch (num) {
+    case  1:
+      num = "ONE";
+      break;
+    case  2:
+      num = "TWO";
+      break;
+    case  3:
+      num = "THREE";
+      break;
+    case  4:
+      num = "FOUR";
+      break;
+    case  5:
+      num = "FIVE";
+      break;
+    case  6:
+      num = "SIX";
+      break;
+    case  7:
+      num = "SEVEN";
+      break;
+    case  8:
+      num = "EIGHT";
+      break;
+    case  9:
+      num = "NINE";
+      break;
+    default:
+      num = "PLEASE TRY AGAIN";
+      break;
+  }
+  return num;
+}
+console.log(caseInSwitch(1))
+
 
 module.exports = {
   isEvenOrOdd,
