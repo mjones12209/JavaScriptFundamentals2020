@@ -3,6 +3,9 @@
  * It should accept a name and return "Hello ______!"
  * @example printGreeting("Tim"); // Hello Tim!
  */
+function printGreeting(name) {
+  return `Hello ${name}!`;
+}
 
 /**
  * Create a function named "timesFive". It should multiply a number by 5.
@@ -10,6 +13,10 @@
  * @example timesFive(2); // 10
  * @example timesFive(0); // 0
  */
+
+ function timesFive(num) {
+    return num * 5;
+ }
 
 /**
  * Create a function called "lowerCaseName".
@@ -20,6 +27,9 @@
  * @example lowerCaseName(); // undefined (should not throw an error)
  * @example lowerCaseName(null); // undefined (should not throw an error)
  */
+function lowerCaseName(string) {
+  return string.toLowerCase();
+}
 
 /**
  * Create a function called "isEvenOrOdd".
@@ -28,12 +38,19 @@
  * @example isEvenOrOdd(10); // even
  * @example isEvenOrOdd(3); // odd
  */
+function isEvenOrOdd(num) {
+  return (num % 2 == 0) ? "even" : "odd"
+}
 
 /**
  * Create a function called "countNumberOfDigits".
  * Given an integer, it should return the number of digits in an integer.
  * @example countNumberOfDigits(5000); // 4
  */
+function countNumberOfDigits(num) {
+  return num.count;
+}
+console.log(countNumberOfDigits(22))
 
 /**
  * Ignore everything below this line. This is for the tests.
