@@ -48,7 +48,7 @@ function isEvenOrOdd(num) {
  * @example countNumberOfDigits(5000); // 4
  */
 function countNumberOfDigits(num) {
-  return num.count;
+  return String(num).replace('.','').length;
 }
 console.log(countNumberOfDigits(22))
 
