@@ -3,7 +3,7 @@
  * It should accept a name and return "Hello ______!"
  * @example printGreeting("Tim"); // Hello Tim!
  */
-function printGreeting(name) {
+const printGreeting = (name) =>  {
   return `Hello ${name}!`;
 }
 
@@ -14,7 +14,7 @@ function printGreeting(name) {
  * @example timesFive(0); // 0
  */
 
- function timesFive(num) {
+const timesFive = (num) => {
     return num * 5;
  }
 
@@ -27,7 +27,7 @@ function printGreeting(name) {
  * @example lowerCaseName(); // undefined (should not throw an error)
  * @example lowerCaseName(null); // undefined (should not throw an error)
  */
-function lowerCaseName(string) {
+const lowerCaseName = (string) => {
   if(string != null) {return string.toLowerCase()} else {return false} ;
 }
 
@@ -38,7 +38,7 @@ function lowerCaseName(string) {
  * @example isEvenOrOdd(10); // even
  * @example isEvenOrOdd(3); // odd
  */
-function isEvenOrOdd(num) {
+const isEvenOrOdd = (num) => {
   return (num % 2 == 0) ? "even" : "odd"
 }
 
@@ -47,10 +47,9 @@ function isEvenOrOdd(num) {
  * Given an integer, it should return the number of digits in an integer.
  * @example countNumberOfDigits(5000); // 4
  */
-function countNumberOfDigits(num) {
+const countNumberOfDigits = (num) => {
   return String(num).replace('.','').length;
 }
-console.log(countNumberOfDigits(22))
 
 /**
  * Ignore everything below this line. This is for the tests.
