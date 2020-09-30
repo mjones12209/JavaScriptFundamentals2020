@@ -28,7 +28,7 @@ function printGreeting(name) {
  * @example lowerCaseName(null); // undefined (should not throw an error)
  */
 function lowerCaseName(string) {
-  return string.toLowerCase();
+  if(string != null) {return string.toLowerCase()} else {return false} ;
 }
 
 /**
