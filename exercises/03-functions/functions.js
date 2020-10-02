@@ -51,6 +51,15 @@ const countNumberOfDigits = (num) => {
   return String(num).replace('.','').length;
 }
 
+const firstName = "Max";
+const lastName = "Well"
+
+const myObject = {
+  firstName,
+  lastName
+}
+console.log(myObject)
+
 /**
  * Ignore everything below this line. This is for the tests.
  */
