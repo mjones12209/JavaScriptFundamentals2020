@@ -3,10 +3,13 @@
  *  @return {string} BMW
  */
 
+const { match } = require("sinon");
+
 const accessingAnItem = () => {
   const cars = ["BMW", "Honda", "Civic"]; // Do not change this line
   return cars[0];
 };
+
 
 /**
  * Add three more programming languages and return the languages array
@@ -134,12 +137,14 @@ const people = [{
 }];
 
 const findAndAbort = (people, id) => {
+  let match;
   for(let person of people) {
     if(person.id == id){
-      return person;
+      match = person;
       break;
     }
   }
+  return match;
 };
 console.log(findAndAbort(people, 20))
 
@@ -210,7 +215,6 @@ const accessAnItemObject = () => {
   };
   return clothes.hat;
 };
-
 
 /**
  * Update the object to contain your first and last name.
