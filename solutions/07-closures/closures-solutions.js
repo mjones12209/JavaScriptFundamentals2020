@@ -73,6 +73,7 @@ const calculator = () => {
    * Create a private variable called "sum"
    * @var {number}
    */
+  let sum = 0;
   /**
    * Return an object that has two methods:
    *
@@ -84,6 +85,12 @@ const calculator = () => {
    * that should return the value of "sum" above.
    * @returns {number} the value of sum
    */
+  return {
+    add: (number) => {
+      sum = sum + number;
+    },
+    get: () => sum,
+  };
 };
 
 /**
@@ -112,7 +119,22 @@ const calculator = () => {
  * guessRound2(1); // "No more guesses. The answer was 0"
  */
 
-const guessingGame = (numberOfRounds) => {};
+const guessingGame = (numberOfRounds) => {
+  /**
+   * @see https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+   */
+  const answer = Math.floor(Math.random() * (10 + 1));
+  let count = 0;
+
+  return (guess) => {
+    count += 1;
+    if (count >= numberOfRounds)
+      return "No more guesses. The answer was " + answer;
+    else if (guess < answer) return "You're too low!";
+    else if (guess > answer) return "You're too high!";
+    else if (guess === answer) return "You got it!";
+  };
+};
 
 module.exports = {
   greeter,

@@ -30,7 +30,7 @@ describe("exercises/08-currying-and-callbacks/currying-and-callbacks.js", () => 
     });
     it('should `console.log` a name when the callback is the "printer" function', () => {
       expect(printer).to.be.a("function");
-      expect(printer.toString()).to.include("console.log(");
+      expect(printer.toString()).to.include("console.log");
       printNames(["Jamal", "Matina"], printer);
     });
   });

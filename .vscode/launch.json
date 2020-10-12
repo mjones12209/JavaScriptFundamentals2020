@@ -124,13 +124,39 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "09-for-each",
+      "name": "09-callbacks",
       "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
       "args": [
         "--timeout",
         "999999",
         "--colors",
-        "${workspaceFolder}/test/09-for-each/for-each.spec.js"
+        "${workspaceFolder}/test/09-callbacks/callbacks.spec.js"
+      ],
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "10-for-each",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceFolder}/test/10-for-each/for-each.spec.js"
+      ],
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "11-map",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceFolder}/test/11-map/map.spec.js"
       ],
       "internalConsoleOptions": "openOnSessionStart"
     }

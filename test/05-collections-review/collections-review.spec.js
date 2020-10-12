@@ -39,7 +39,7 @@ describe("exercises/05-collections-review/collections-review.js", () => {
       expect(uppercaseTargetWord("lunch dinner", 5)).to.equal(undefined);
     });
     it("should use split", () => {
-      expect(uppercaseTargetWord.toString()).includes(".split(");
+      expect(uppercaseTargetWord.toString()).includes(".split");
     });
   });
 

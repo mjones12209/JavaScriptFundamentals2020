@@ -42,7 +42,7 @@ describe("exercises/07-closures/closures.js", () => {
       groceryListObj.add("pears");
       groceryListObj.add("orange");
       groceryListObj.add("apples");
-      groceryListObj.remove(2);
+      groceryListObj.remove(1);
       expect(groceryListObj.getList().length).to.equal(2);
     });
   });

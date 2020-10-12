@@ -72,14 +72,17 @@ const highestNumber = (numbers) => {
     let num = numbers[i];
     if (num > highest || highest === undefined) highest = num;
   }
+  return highest;
 
   // Method 2: For ... of loop
   let highest;
   for (let num of numbers) {
     if (num > highest || highest === undefined) highest = num;
   }
-
   return highest;
+
+  // Method 3
+  return Math.max(...numbers);
 };
 
 /**
