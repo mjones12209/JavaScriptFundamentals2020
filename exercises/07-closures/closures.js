@@ -14,7 +14,14 @@
  *
  * (This is technically not a closure. It is here to prepare you for the next problems.)
  */
-const greeter = () => {};
+const greeter = () => {
+  return {
+    hello: (name) => `Hello ${name}!`
+  }
+};
+const say = greeter()
+const greeting = say.hello("Twinkle Toes")
+console.log(greeting)
 
 /**
  * As a programmer, I would like to be able to call on a function that returns an object that will allow me to
@@ -49,7 +56,27 @@ const greeter = () => {};
 
 const groceryList = () => {
   let groceryItems = [];
+  return {
+    add: (item) => {
+      groceryItems.push(item)
+      return groceryItems;
+    },
+    remove: (index) => {
+      groceryItems.splice(index,1);
+      return groceryItems;
+    },
+    getList: () => {
+      return groceryItems;
+    }
+  }
 };
+
+const groceryListObj = groceryList();
+console.log(groceryListObj.add("cheese"))
+console.log(groceryListObj.add("applce"))
+console.log(groceryListObj.add("oranges"))
+console.log(groceryListObj.remove(1))
+console.log(groceryListObj.getList())
 
 /**
  * Use closures to complete this exercise.
@@ -72,6 +99,11 @@ const calculator = () => {
    * that should return the value of "sum" above.
    * @returns {number} the value of sum
    */
+  let sum = 0;
+  return {
+    setter: (arg) => {sum += arg },
+    getter: () => sum
+  }
 };
 
 /**
@@ -100,7 +132,31 @@ const calculator = () => {
  * guessRound2(1); // "No more guesses. The answer was 0"
  */
 
-const guessingGame = (numberOfRounds) => {};
+const guessingGame = (numberOfRounds) => {
+  let answer = Math.floor(Math.random() * 11);
+  let guesses = 0;
+
+  return (guess) => {
+   if (guesses >= numberOfRounds) {
+      return `No more guesses. The answer was ${answer}`;
+    } else if (guesses <= numberOfRounds) {
+      guesses++ 
+      if(guess < answer) return "You're too low!";
+      console.log(guesses)
+      if(guess > answer) return "You're too high!";
+      if(guess === answer) return "You got it!";   
+    }
+  }
+}
+
+let guessRound1 = guessingGame(5)
+console.log(guessRound1(1)); // "You're too low!"
+console.log(guessRound1(8)); // "You're too high!"
+console.log(guessRound1(5)); // "You're too low!"
+console.log(guessRound1(7)); 
+console.log(guessRound1(7));
+console.log(guessRound1(7));// "You got it!"
+
 
 module.exports = {
   greeter,

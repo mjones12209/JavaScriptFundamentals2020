@@ -27,7 +27,7 @@ describe("exercises/11-map/map.js", () => {
       expect(doubledValues).to.be.equalTo([4, 6, 8]);
     });
     it("should use JavaScript's built in .map()", () => {
-      const funcStr = doubledValues.toString();
+      const funcStr = doubleValues.toString();
       expect(funcStr).to.contain(".map");
     });
   });

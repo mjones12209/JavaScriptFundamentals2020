@@ -13,7 +13,14 @@
  * @param {number} a
  * @param {number} b
  */
-const multiplier = (a, b) => {};
+const multiplier = (a, b) => {
+ if(a && b){
+   return a * b;
+ }
+ return (second) => a * second;
+} 
+
+console.log(multiplier(3,4));
 
 /**
  * Create a function called "printer".
@@ -37,8 +44,16 @@ const multiplier = (a, b) => {};
  * printNames(["Jamal", "Matina"], printer);
  * // - Jamal
  * // - Matina
+ * 
  */
-const printNames = (array, callback) => {};
+const printer = (name) => console.log(name)
+const printNames = (array, callback) => {
+  for(string of array){
+    callback(string);
+  }
+};
+
+printNames(["Jamal", "Matina"], printer);
 
 /**
  * Ignore everything below this line. It is for the tests.

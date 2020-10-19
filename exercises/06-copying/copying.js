@@ -16,8 +16,19 @@
  *
  * user.email = "icanhascheeseburger@yahoo.com"; // This should not change newUser
  */
-const changeEmail = (user, newEmail) => {};
 
+
+const changeEmail = (user, newEmail) => {
+  return {
+    ...user,
+    email : newEmail
+  };
+}
+const user = changeEmail(
+  { id: 1234, username: "lolcatz1", email: "lolcatz1@gmail.com" },
+ "purrfect@gmail.com"
+);
+console.log(user)
 /**
  * Add a new item to a shopping cart. You should deep copy any array and objects.
  * @param {Array} shoppingCart an array of objects
@@ -37,7 +48,17 @@ const changeEmail = (user, newEmail) => {};
  * shoppingCart[0].price = 9000000; // This should not change newShoppingCart
  * newItem.price = 10; // This should not change newItem
  */
-const addToCart = (shoppingCart, newItem) => {};
+const shoppingCart = [{ name: "TV - 20ft", price: 1000000 }];
+const newItem = { name: "Popcorn", price: 5 };
+
+const addToCart = (shoppingCart, newItem) => {
+  let deepCopyCart = JSON.parse(JSON.stringify(shoppingCart))
+  let deepCopyNewItem = JSON.parse(JSON.stringify(newItem))
+  deepCopyCart.push(deepCopyNewItem)
+  return deepCopyCart;
+};
+
+console.log(addToCart(shoppingCart, newItem))
 
 module.exports = {
   changeEmail,
