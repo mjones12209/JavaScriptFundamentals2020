@@ -21,7 +21,15 @@
  * console.log( calculate(7, 3, subtract) ); // 4
  */
 
-const calculate = (num1, num2, callback) => {};
+const add =  (num1,num2) => num1 + num2
+const subtract = (num1,num2) => num1 - num2
+
+const calculate = (num1, num2, callback) => {
+
+    return callback(num1, num2)
+}
+console.log( calculate(5, 10, add) );
+console.log( calculate(7, 3, subtract) );
 
 /**
  * Returns the first number in an array that meets a condition.
@@ -46,8 +54,25 @@ const calculate = (num1, num2, callback) => {};
  * console.log( findFirst([1, 3, 7, 8, 20], isNumberEven) ) // 8
  * console.log( findFirst([4, 500, 30, 2], isNumberTwoDigits) ) // 30
  */
+const isNumberEven = (num) => {
+  if (num % 2 === 0) return true;
+   else return false;
+};
 
-const findFirst = (arrayOfNum, callback) => {};
+const isNumberTwoDigits = (num) => {
+  if (`${num}`.length === 2) {
+        return true;
+  } else return false;
+};
+
+const findFirst = (arrayOfNum, callback) => {
+  for(let num of arrayOfNum){
+    if (callback(num)) return num;
+  }
+};
+
+console.log( findFirst([1, 3, 7, 8, 20], isNumberEven) ) 
+console.log( findFirst([4, 500, 30, 2], isNumberTwoDigits) )
 
 module.exports = {
   calculate,
