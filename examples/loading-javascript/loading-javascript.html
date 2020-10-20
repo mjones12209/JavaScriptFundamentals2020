@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My title</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <!-- External JavaScript (Preferred Way) -->
+    <script src="loading-javascript.js" defer></script>
+  </head>
+
+  <body class="container">
+    <div class="container mt-2 mb-2">
+      <h1 class="h3">Here is how you can access secret information</h1>
+      <ol>
+        <li>
+          Open your Developer Tools (<code>command + option + i</code> on Mac
+          and <code>ctrl + shift + i</code> on Windows).
+        </li>
+        <li>Click on the <em>Console</em> tab.</li>
+        <li>Type <code>userPassword</code></li>
+      </ol>
+    </div>
+
+    <!-- Internal JavaScript -->
+    <script>
+      (function () {
+        console.log("Internal JavaScript");
+      })();
+    </script>
+  </body>
+</html>
