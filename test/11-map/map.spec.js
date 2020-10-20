@@ -19,7 +19,7 @@ describe("exercises/11-map/map.js", () => {
       expect(suppliedArr).to.be.equalTo([1, 2, 3]);
     });
   });
-  describe("doubledValues()", () => {
+  describe("doubleValues()", () => {
     it("should return an array where each number in the array is doubled", () => {
       const doubledValues = doubleValues([2, 3, 4], (number) => {
         return number * 2;

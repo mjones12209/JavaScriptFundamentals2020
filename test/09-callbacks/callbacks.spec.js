@@ -13,11 +13,11 @@ describe("exercises/09-callbacks/09-callbacks.js", () => {
       expect(matches.length).to.be.above(1);
     });
     it("should return the result of a callback invoked on two numbers", () => {
-      const add = (a, b) => {
-        return a + b;
+      const multiply = (a, b) => {
+        return a * b;
       };
-      const result = calculate(5, 10, add);
-      expect(result).to.equal(15);
+      const result = calculate(5, 10, multiply);
+      expect(result).to.equal(50);
     });
   });
   describe("findFirst()", () => {
@@ -27,12 +27,12 @@ describe("exercises/09-callbacks/09-callbacks.js", () => {
       expect(matches.length).to.be.above(1);
     });
     it("should find the first number in an array that, when passed as an argument into a callback, returns true", () => {
-      const isNumberEven = (num) => {
-        if (num % 2 === 0) return true;
+      const isNumberDivisibleByThree = (num) => {
+        if (num % 3 === 0) return true;
         else return false;
       };
-      const result = findFirst([1, 3, 7, 8, 20], isNumberEven);
-      expect(result).to.equal(8);
+      const result = findFirst([1, 3, 7, 8, 20], isNumberDivisibleByThree);
+      expect(result).to.equal(3);
     });
   });
 });
