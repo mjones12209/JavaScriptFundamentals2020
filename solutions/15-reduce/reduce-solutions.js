@@ -6,22 +6,35 @@
  *  addItems([1,5,6]) // 12
  *  addItems([1,-2,-3]) // -4
  */
+
+// Solution 1
 const addItems = (arr) => {
-  return arr.reduce((acc, currval) => acc + currval);
+  return arr.reduce((sum, number) => {
+    return sum + number;
+  }, 0);
 };
+// Solution 2
+const addItems = (arr) => arr.reduce((sum, number) => sum + number);
 
 /**
  * Create a function that flattens an array (that is, it should "unnest" a nested array).
  * @param {array} array e.g. `[[1, 3], [5, 10]]`
  * @returns {array} new, flattened array e.g. `[1, 3, 5, 10]`
  */
-// const flattenArray = (array) => {
-//   return array.flat();
-// };
 
+// Solution 1
 const flattenArray = (array) => {
-  return array.reduce((acc,val) => acc.concat(val), []);
+  return array.reduce((flattenedArray, currArray) => {
+    flattenedArray = flattenedArray.concat(currArray);
+    return flattenedArray;
+  }, []);
 };
+// Solution 2
+const flattenArray = (array) =>
+  array.reduce((flattenedArray, currArray) => [
+    ...flattenedArray,
+    ...currArray,
+  ]);
 
 /**
  * Create a function that tallies the number of each kind of "thing" within the array
@@ -32,19 +45,12 @@ const flattenArray = (array) => {
  *   generateTally(generateTally); // {Apple: 2, Orange: 1, Blueberry: 1, Grape: 2}
  */
 const generateTally = (array) => {
-  let tally = array.reduce((acc, val) => {
-    if (acc[val]) {
-      acc[val] += 1;
-    } else {
-      acc[val] = 1;
-    }
-    return acc;
+  return array.reduce((tally, item) => {
+    if (tally[item]) tally[item] += 1;
+    else tally[item] = 1;
+    return tally;
   }, {});
-  console.log(tally);
-  return tally;
 };
-
-
 
 /**
  * Create a function, that when given an array of object literals, will index the object literals by a single column
@@ -57,7 +63,7 @@ const generateTally = (array) => {
  *
  * let people = [
  *  {id: 123, name: 'Dave', age: 23},
- *  {id: 456, name: 'Rachel', age: 35}
+ *  {id, 456, name: 'Rachel', age: 35}
  * ];
  *
  * let result =  arrayToObject();
@@ -65,26 +71,15 @@ const generateTally = (array) => {
  * // result should be:
  * {
  *   123: {id: 123, name: 'Dave', age: 23},
- *   456: {id: 456, name: 'Rachel', age: 35}
+ *   456: {id, 456, name: 'Rachel', age: 35}
  * }
  */
 const arrayToObject = (arr) => {
-  return arr.reduce((acc, item)=> {
-    return {
-      ...acc,
-      [item.id]: item
-    }
-  }); 
-}
-
-let people = [
-  {id: 123, name: 'Dave', age: 23},
-  {id: 456, name: 'Rachel', age: 35}
-];
-
-let result =  arrayToObject(people);
-console.log(result);
-
+  return arr.reduce((obj, person) => {
+    obj[person.id] = person;
+    return obj;
+  }, {});
+};
 
 module.exports = {
   addItems,
