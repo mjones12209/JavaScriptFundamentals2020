@@ -4,24 +4,26 @@
  * You may modify the HTML to add ids, classes, data attributes, etc.
  */
 
-const alert1 = document.querySelector("#alert1");
-alert1.setAttribute("role", "alert");
+(function () {
+  const alert1 = document.querySelector("#alert1");
+  alert1.setAttribute("role", "alert");
 
-document.querySelector("#javascriptLink").href =
-  "https://developer.mozilla.org/en-US/docs/Web/JavaScript";
+  document.querySelector("#javascriptLink").href =
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript";
 
-document.querySelector("#victorious").textContent = "I am victorious!";
+  document.querySelector("#victorious").textContent = "I am victorious!";
 
-document.querySelector("#inlineStyles").style.color = "#411169";
+  document.querySelector("#inlineStyles").style.color = "#411169";
 
-const dangerNoMore = document.querySelector("#dangerNoMore");
-dangerNoMore.classList.add("text-dark");
+  const dangerNoMore = document.querySelector("#dangerNoMore");
+  dangerNoMore.classList.add("text-dark");
 
-document.querySelector("#hideMe").style.display = "none";
+  document.querySelector("#hideMe").style.display = "none";
 
-document.querySelector("#abraKadabra").classList.remove("hidden");
+  document.querySelector("#abraKadabra").classList.remove("hidden");
 
-const button = document.querySelector("#thisButton");
-if (button.classList.contains("btn-primary")) {
-  document.querySelector("#buttonOutput").textContent = "✓ blue";
-}
+  const button = document.querySelector("#thisButton");
+  if (button.classList.contains("btn-primary")) {
+    document.querySelector("#buttonOutput").textContent = "✓ blue";
+  }
+})();

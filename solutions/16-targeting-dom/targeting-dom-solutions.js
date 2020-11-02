@@ -11,26 +11,28 @@
  * Do not change the HTML unless you are instructed to do so.
  */
 
-const firstLi = document.querySelector("li");
-console.log("firstLi", firstLi);
+(function () {
+  const firstLi = document.querySelector("li");
+  console.log("firstLi", firstLi);
 
-const myId = document.querySelector("#myId");
-console.log("myId", myId);
+  const myId = document.querySelector("#myId");
+  console.log("myId", myId);
 
-const allLi = document.querySelectorAll("li");
-for (let i = 0; i < allLi.length; i++) {
-  console.log("allLi", allLi[i]);
-}
+  const allLi = document.querySelectorAll("li");
+  for (let i = 0; i < allLi.length; i++) {
+    console.log("allLi", allLi[i]);
+  }
 
-const allBgWarning = document.querySelectorAll(".bg-warning");
-for (let li of allBgWarning) {
-  console.log(".bg-warning", li);
-}
+  const allBgWarning = document.querySelectorAll(".bg-warning");
+  for (let li of allBgWarning) {
+    console.log(".bg-warning", li);
+  }
 
-const cells = document.querySelectorAll("#myRow > .col");
-cells.forEach((cell) => console.log("cell", cell));
+  const cells = document.querySelectorAll("#myRow > .col");
+  cells.forEach((cell) => console.log("cell", cell));
 
-const dataAttributes = document.querySelectorAll("[data-target]");
-dataAttributes.forEach((dataAttribute) =>
-  console.log("dataAttribute", dataAttribute)
-);
+  const dataAttributes = document.querySelectorAll("[data-target]");
+  dataAttributes.forEach((dataAttribute) =>
+    console.log("dataAttribute", dataAttribute)
+  );
+})();
