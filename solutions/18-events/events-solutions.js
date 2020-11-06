@@ -10,10 +10,9 @@
    * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
    */
 
-  const alertMe = () => {
+  document.querySelector("#alertMe").addEventListener("click", () => {
     alert("Alert Me!");
-  };
-  document.querySelector("#alertMe").addEventListener("click", alertMe);
+  });
 
   /**
    * Challenge 2: Disable a button that will charge a credit card.
@@ -24,18 +23,20 @@
    */
 
   // Solution 1
-  const chargeCardButton = document.querySelector("#chargeCard");
-  chargeCardButton.addEventListener("click", () => {
-    chargeCardButton.disabled = "disabled";
-    chargeCardButton.textContent = "Loading ...";
+  const chargeCreditCardButton = document.querySelector("#chargeCreditCard");
+  chargeCreditCardButton.addEventListener("click", () => {
+    chargeCreditCardButton.disabled = "disabled";
+    chargeCreditCardButton.textContent = "Loading ...";
   });
 
   // Solution 2
-  document.querySelector("#chargeCard").addEventListener("click", (event) => {
-    const button = event.target;
-    button.disabled = "disabled";
-    button.textContent = "Loading ...";
-  });
+  document
+    .querySelector("#chargeCreditCard")
+    .addEventListener("click", (event) => {
+      const button = event.target;
+      button.disabled = "disabled";
+      button.textContent = "Loading ...";
+    });
 
   /**
    * Challenge 3: Show comments for the news story.
@@ -48,19 +49,19 @@
    * If the comments are open, change the button text from "View Comments" to "Hide Comments".
    */
 
-  const commentsButton = document.querySelector("#commentsButton");
-  const comments = document.querySelector("#comments");
-
-  commentsButton.addEventListener("click", () => {
-    // Toggling comments
-    if (comments.matches(".hidden")) {
-      comments.classList.remove("hidden");
-      commentsButton.textContent = "Hide Comments";
-    } else {
-      comments.classList.add("hidden");
-      commentsButton.textContent = "View Comments";
-    }
-  });
+  document
+    .querySelector("#toggleComments")
+    .addEventListener("click", (event) => {
+      const button = event.target;
+      const comments = document.querySelector("#comments");
+      if (comments.classList.contains("hidden")) {
+        comments.classList.remove("hidden");
+        button.textContent = "Hide Comments";
+      } else {
+        comments.classList.add("hidden");
+        button.textContent = "Show Comments";
+      }
+    });
 
   /**
    * Challenge 4: Rendering what a user is typing on the page.
@@ -68,6 +69,11 @@
    * When the user types inside the textbook labeled "Enter mystery text here",
    * it should display what the user is typing in the <div></div> tags below.
    */
+
+  document.querySelector("#mysteryText").addEventListener("input", (event) => {
+    const userInput = event.target.value;
+    document.querySelector("#mysteryTextDisplay").textContent = userInput;
+  });
 
   /**
    * Challenge 5: Display the results of the world's most pointless search engine.
@@ -82,6 +88,17 @@
    * and you must prevent the page from refreshing when the form is submitted.
    */
 
+  document
+    .querySelector("#handleThisForm")
+    .addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const oceanInput = document.querySelector("#oceanInput");
+
+      const oceanOutput = document.querySelector("#oceanOutput");
+      oceanOutput.textContent = `No results for ${oceanInput.value} found`;
+    });
+
   /**
    * Challenge 6: Agree to the terms and conditions
    *
@@ -93,6 +110,52 @@
    * To start, you will need to hide some element on the page and change the input's classes.
    */
 
+  document.querySelector("#termsForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const terms = document.querySelector("#terms");
+    const termsError = document.querySelector("#termsError");
+    const termsSuccess = document.querySelector("#termsSuccess");
+
+    const showTermsError = () => {
+      // Makes "I Agree to the Terms and Conditions" red
+      if (!terms.classList.contains("is-invalid")) {
+        terms.classList.add("is-invalid");
+      }
+
+      // Hides success message
+      if (!termsSuccess.classList.contains("hidden")) {
+        termsSuccess.classList.add("hidden");
+      }
+
+      // Shows error message
+      if (termsError.classList.contains("hidden")) {
+        termsError.classList.remove("hidden");
+      }
+    };
+
+    const showTermsSuccess = () => {
+      // Reverts "I Agree to the Terms and Conditions" back to original color
+      if (terms.classList.contains("is-invalid")) {
+        terms.classList.remove("is-invalid");
+      }
+
+      // Hides success message
+      if (termsSuccess.classList.contains("hidden")) {
+        termsSuccess.classList.remove("hidden");
+      }
+
+      // Shows error message
+      if (!termsError.classList.contains("hidden")) {
+        termsError.classList.add("hidden");
+      }
+    };
+
+    const checkbox = document.querySelector("#terms");
+    if (checkbox.checked) showTermsSuccess();
+    else showTermsError();
+  });
+
   /**
    * Challenge 7: Add pagination to the student table.
    *
@@ -103,4 +166,31 @@
    * - Clicking on the "«" and "1" buttons should show everything in data-group="1" and hide everything in data-group="2".
    * - Clicking on the "2" and "»" buttons should show everything in data-group="2" and hide everything in data-group="1".
    */
+
+  const showPage = (pageNumber) => {
+    const tableRows = document.querySelectorAll("tr");
+    tableRows.forEach((row) => {
+      const group = `[data-group="${pageNumber}"]`;
+      if (row.matches(group)) {
+        row.classList.remove("hidden");
+      } else {
+        row.classList.add("hidden");
+      }
+    });
+  };
+
+  showPage(1);
+
+  document
+    .querySelector("#previousButton")
+    .addEventListener("click", () => showPage(1));
+  document
+    .querySelector("#buttonPage1")
+    .addEventListener("click", () => showPage(1));
+  document
+    .querySelector("#buttonPage2")
+    .addEventListener("click", () => showPage(2));
+  document
+    .querySelector("#nextButton")
+    .addEventListener("click", () => showPage(2));
 })();

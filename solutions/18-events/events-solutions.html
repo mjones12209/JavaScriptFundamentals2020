@@ -34,7 +34,9 @@
       <button class="btn btn-success btn-lg" id="alertMe">Alert Me!</button>
 
       <!-- This button should become disabled and display "Loading ..." when clicked on -->
-      <button class="btn btn-warning btn-lg" id="chargeCard">Charge My Credit Card</button>
+      <button class="btn btn-warning btn-lg" id="chargeCreditCard">
+        Charge My Credit Card
+      </button>
     </section>
 
     <section class="container pt-4 pb-4">
@@ -64,7 +66,11 @@
         <p>Highway I-87 is now closed.</p>
 
         <!-- This is the button that will toggle the comments -->
-        <p><button class="btn btn-primary" id="commentsButton">View Comments</button></p>
+        <p>
+          <button class="btn btn-primary" id="toggleComments">
+            View Comments
+          </button>
+        </p>
 
         <!-- This is the comment section you need to toggle -->
         <div class="card card-body hidden" id="comments">
@@ -90,23 +96,25 @@
         <!-- Capture what the user is type here -->
         <input
           type="text"
+          id="mysteryText"
           class="form-control mb-3"
           placeholder="Enter mystery text here"
           aria-label="Enter mystery text here"
         />
 
         <!-- Display whatever text the user types in the textbox above inside the <div></div> -->
-        <div class="card bg-warning"></div>
+        <div class="card bg-warning" id="mysteryTextDisplay">User text</div>
       </div>
     </section>
 
     <section class="bg-dark pt-4 pb-1">
       <div class="container">
         <!-- Handle this form -->
-        <form class="form-group">
+        <form class="form-group" id="handleThisForm">
           <div class="input-group">
             <input
               type="search"
+              id="oceanInput"
               placeholder="Search for oceans near Albany, NY"
               aria-label="Search for oceans near Albany, NY"
               class="form-control"
@@ -118,21 +126,17 @@
         </form>
 
         <!-- Display "No results for ___ found" inside of this <p></p> -->
-        <p class="text-white"></p>
+        <p class="text-white" id="oceanOutput"></p>
       </div>
     </section>
 
     <section class="bg-light pt-4 pb-4">
       <div class="d-flex justify-content-center">
-        <form">
+        <form id="termsForm">
           <div class="form-inline">
             <div class="form-check form-check-inline">
               <!-- The "is-invalid" class here makes the "I Agree ..." red. The input should only have this class if the user did not agree to the terms and conditions -->
-              <input
-                class="form-check-input is-invalid"
-                type="checkbox"
-                id="terms"
-              />
+              <input class="form-check-input" type="checkbox" id="terms" />
               <label class="form-check-label" for="terms"
                 >I Agree to the Terms and Conditions</label
               >
@@ -142,12 +146,12 @@
           </div>
 
           <!-- Only display me if the user did not agree to the terms and conditions -->
-          <div class="text-danger">
+          <div class="text-danger hidden" id="termsError">
             <small>You must agree to the terms and conditions</small>
           </div>
 
           <!-- Only display after the user clicks on the "Continue" button and he has agreed to the terms -->
-          <div class="text-success">
+          <div class="text-success hidden" id="termsSuccess">
             <small>Thank you for signing up!</small>
           </div>
         </form>
@@ -270,21 +274,31 @@
         <ul class="pagination">
           <li class="page-item">
             <!-- When this is clicked, it should SHOW data-group="1" and hide data-group="2" -->
-            <button class="page-link" type="button" aria-label="Previous">
+            <button
+              class="page-link"
+              type="button"
+              aria-label="Previous"
+              id="previousButton"
+            >
               &laquo;
             </button>
           </li>
           <li class="page-item">
             <!-- When this is clicked, it should SHOW data-group="1" and hide data-group="2" -->
-            <button class="page-link" type="button">1</button>
+            <button class="page-link" type="button" id="buttonPage1">1</button>
           </li>
           <li class="page-item">
             <!-- When this is clicked, it should SHOW data-group="2" and hide data-group="1" -->
-            <button class="page-link" type="button">2</button>
+            <button class="page-link" type="button" id="buttonPage2">2</button>
           </li>
           <li class="page-item">
             <!-- When this is clicked, it should SHOW data-group="2" and hide data-group="1" -->
-            <button class="page-link" type="button" aria-label="Next">
+            <button
+              class="page-link"
+              type="button"
+              aria-label="Next"
+              id="nextButton"
+            >
               &raquo;
             </button>
           </li>

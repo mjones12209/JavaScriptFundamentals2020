@@ -154,8 +154,8 @@ contButton.addEventListener('click', (event)=> {
     const dataGroup1 = document.querySelectorAll("[data-group='1']");
     const dataGroup2 = document.querySelectorAll("[data-group='2']");
 
-    const dataGroup1Btn = document.querySelectorAll("[data-datagroup1Btn]");
-    const dataGroup2Btn = document.querySelectorAll("[data-datagroup2Btn]");
+    const dataGroup1Btn = document.querySelector("[data-datagroup1Btn]");
+    const dataGroup2Btn = document.querySelector("[data-datagroup2Btn]");
     
     const nextButton = document.querySelector("[aria-label='Next']");
     const previousButton = document.querySelector("[aria-label='Previous']")
@@ -181,15 +181,15 @@ contButton.addEventListener('click', (event)=> {
         });
     });
 
-    dataGroup2Btn[0].addEventListener('click', ()=>{
+    dataGroup2Btn.addEventListener('click', ()=>{
         dataGroup2.forEach((row)=>{
             row.classList.remove('hidden');
         })
         dataGroup1.forEach((row)=>{
             row.classList.add("hidden");
         });
-    });
-    dataGroup1Btn[0].addEventListener('click', ()=>{
+    }); 
+    dataGroup1Btn.addEventListener('click', ()=>{
         dataGroup1.forEach((row)=>{
             row.classList.remove('hidden');
         })

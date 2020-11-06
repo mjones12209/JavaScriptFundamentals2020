@@ -1,6 +1,7 @@
   const generateTableBtn = document.querySelector("button");
+  const inputRow = document.querySelector("body:nth-child(2)")
 
-
+console.log(inputRow);
   
   generateTableBtn.addEventListener('click', (event)=>{
       // get the reference for the body
