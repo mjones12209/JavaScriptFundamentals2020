@@ -55,9 +55,22 @@ fetch('https://reqres.in/api/users',{
 
 
 //axios
+import $ from 'jquery'
+import axios from 'axios'
 
-axios ({
-    url:'',
-    method: ,
-    get
-});
+const getWeather = async () => {
+    try {
+        let response = await axios.get('apiurl');
+        const  {latitude, longitude} = response.data;
+        let weather = await axios.get('apiurl');
+        return weather;
+    } catch (error) {
+        return error;
+}
+
+const weatherPromise = getWeather();
+weatherPromise.then("Success").catch("Error");
+
+    
+    
+}
