@@ -224,6 +224,19 @@
         "${workspaceFolder}/test/20-promise/promise.spec.js"
       ],
       "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "24-module-pattern",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceFolder}/test/24-module-pattern/module-pattern.spec.js"
+      ],
+      "internalConsoleOptions": "openOnSessionStart"
     }
   ]
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EXERCISE Observer Pattern</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.2/purify.min.js"
+      integrity="sha512-T6jx0SL5artICbQxeQCg3iToWGEuWM6P2XjNxP1vMI6fNtgIb3dnVD5gpd/pkQKoMfi1ygq5ezv/Z2VB3lLGtw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="exchange-rates.js" defer></script>
+    <script src="dropdown.js" defer></script>
+    <script src="currency-api.js" defer></script>
+    <script src="observer-pattern.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container pt-3">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="currency1">Currency</label>
+            <select name="currency1" id="currency1" class="form-control">
+              <option value=""></option>
+            </select>
+          </div>
+          <p>Amount</p>
+          <p class="text-muted">1</p>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="currency2">Currency</label>
+            <select name="currency2" id="currency2" class="form-control">
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              class="form-control"
+              disabled="disabled"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
