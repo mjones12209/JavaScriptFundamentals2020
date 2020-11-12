@@ -55,14 +55,16 @@ const students = [
 ];
 
 
+
 const TeacherGradeBook = (() => {
+
   const debug = () => {
-    students.forEach(student=>console.log(`${student.firstName} ${student.lastName}`));
+    students.forEach(student=>console.log(student));
   }
 
   const getFailingStudents = () => {
     let arr = [];
-    students.forEach((student)=>{ 
+    studentGrades.forEach((student)=>{ 
       if(student.grades.reduce((acc,curr)=>acc + curr) / student.grades.length < 65){arr.push(student)}
      });
      return arr;    
@@ -70,7 +72,7 @@ const TeacherGradeBook = (() => {
 
   const getPassingStudents = () => {
     let arr = [];
-    students.forEach((student)=>{ 
+    studentGrades.forEach((student)=>{ 
       if(student.grades.reduce((acc,curr)=>acc + curr) / student.grades.length > 65){arr.push(student)}
      });
      return arr;    
