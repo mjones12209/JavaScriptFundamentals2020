@@ -30,7 +30,7 @@ response.then((response)=>console.log(response)).catch((error)=>console.log(erro
 const myFaceAJAXRequest =() => {
     return new Promise((resolve, reject)=>{
         window.setTimeout(()=>{
-            resolve({ isSuccess: 1, name: 'Janet Weaver'});
+            resolve(      );
         },4000);
     });
 };
@@ -74,3 +74,16 @@ weatherPromise.then("Success").catch("Error");
     
     
 }
+
+
+
+//this is async and await
+const myFunc = (async ()=>{
+    try{
+        //return stuff
+    }
+    catch {
+        //return stuff
+    }
+
+})();

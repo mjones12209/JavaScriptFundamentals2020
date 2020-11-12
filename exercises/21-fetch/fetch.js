@@ -12,4 +12,13 @@
    *    "message": "https://images.dog.ceo/breeds/poodle-toy/n02113624_9550.jpg"
    * }
    */
+
+
 })();
+
+fetch("https://dog.ceo/api/breeds/image/random", {
+  method: 'GET'
+})
+  .then((response)=>response.json())
+  .then((response)=>console.log(response))
+  .catch((data)=>console.log(data));
