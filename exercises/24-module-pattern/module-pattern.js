@@ -59,7 +59,7 @@ const students = [
 const TeacherGradeBook = (() => {
 
   const debug = () => {
-    students.forEach(student=>console.log(student));
+    studentGrades.forEach(student=>console.log(student));
   }
 
   const getFailingStudents = () => {
