@@ -14,4 +14,35 @@
  * https://rickandmortyapi.com/documentation/#get-a-single-character
  *
  * Use the AXIOS library to make AJAX requests.
+ * 
  */
+const dropdown = document.querySelector("#dropdown");
+const imgTag = document.querySelector(".img-rounded");
+console.log(imgTag)
+let characterInfo = [];
+ axios({
+     url: "https://rickandmortyapi.com/api/character/",
+     method: 'GET'
+
+ })
+ .then((response)=>{
+     console.log(response.data.results);
+     response.data.results.forEach((character) => {
+         let htmlStr = `<option>${character.name}</option>`;
+         characterInfo.push({
+            name: character.name,
+            url: character.image
+        });
+         dropdown.insertAdjacentHTML("beforeend",htmlStr);
+     });
+     dropdown.addEventListener('change', (event)=>{
+        ;
+        for (let character of characterInfo){
+            if(character.name == event.target.value){
+                imgTag.setAttribute("src",character.url);
+            }
+        }
+     });
+ })
+ .catch((error)=>console.log(error));
+
