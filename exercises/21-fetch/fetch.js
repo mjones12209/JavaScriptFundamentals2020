@@ -14,11 +14,21 @@
    */
 
 
-})();
 
-fetch("https://dog.ceo/api/breeds/image/random", {
-  method: 'GET'
-})
-  .then((response)=>response.json())
-  .then((response)=>console.log(response))
-  .catch((data)=>console.log(data));
+const dogButton = document.querySelector(".button-primary");
+const imgTag = document.querySelector("#image");
+
+dogButton.addEventListener('click',(event)=>{
+  fetch("https://dog.ceo/api/breeds/image/random", {
+    method: 'GET'
+  })
+    .then((response)=>response.json())
+    .then((response)=>{
+      console.log(response);
+      imgTag.setAttribute('src',response.message);      
+  })
+    .catch((data)=>console.log(data));
+  })
+
+
+})(); 
