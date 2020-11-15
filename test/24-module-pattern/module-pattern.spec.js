@@ -6,7 +6,7 @@ const {
   TeacherGradeBook,
 } = require("../../exercises/24-module-pattern/module-pattern.js");
 
-describe("xexercises/24-module-pattern/module-pattern.js", () => {
+describe("exercises/24-module-pattern/module-pattern.js", () => {
   describe("TeacherGradeBook.getFailingStudents()", () => {
     it("should return a failing list of students", () => {
       const failingStudents = TeacherGradeBook.getFailingStudents();
