@@ -15,16 +15,14 @@ button.addEventListener("click",(event)=>{
     (async ()=>{
         try {
             let response = await fetch("https://ron-swanson-quotes.herokuapp.com/v2/quotes");
-            if(!response.ok){
-                throw new Error(`Error: ${response.status}`);
-            } else {
+      
                 let data = await response.json();
                 let blockQuote = document.querySelector("#quote");
                 blockQuote.textContent = data;
-            }
+            
         }
         catch(e) {
-            console.log(e);
+            console.error(e);
         }
     })();
 });
