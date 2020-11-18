@@ -54,28 +54,38 @@
    * @see https://codesandbox.io/s/observer-pattern-no-bundler-n2ukw?file=/src/index.js
    */
 
-  document
-    .querySelector("#currency2")
-    // I'm putting async here so that await will work
-    .addEventListener("change", async () => {
-      const currency1 = document.querySelector("#currency1").value;
-      const currency2 = document.querySelector("#currency2").value;
+const observer = Observable();
 
-      // Here I am checking to see if both dropdowns are complete.
-      // Only when both are complete, will I make the AJAX request.
-      if (currency1 && currency2) {
-        const response = await fakeAxios({
-          url: "http://pretendsite.com/currency",
-          method: "POST",
-          data: JSON.stringify({
-            currency1: currency1,
-            currency2: currency2,
-            amount: 1,
-          }),
-        });
+const listenerOne =  async () => {
+  const currency1 = document.querySelector("#currency1").value;
+  const currency2 = document.querySelector("#currency2").value;
+  
+    // Here I am checking to see if both dropdowns are complete.
+    // Only when both are complete, will I make the AJAX request.
+    if (currency1 && currency2) {
+      const response = await fakeAxios({
+        url: "http://pretendsite.com/currency",
+        method: "POST",
+        data: JSON.stringify({
+          currency1: currency1,
+          currency2: currency2,
+          amount: 1,
+        }),
+      });
+  
+       // Displays the converted amount
+      document.querySelector("#amount").value = response.amount;
+    }
+  }
+  
+  observer.subscribe(listenerOne);
 
-        // Displays the converted amount
-        document.querySelector("#amount").value = response.amount;
-      }
-    });
+  document.querySelector("#currency2").addEventListener("change", (event) => {
+    observer.notify();
+  });
+  document.querySelector("#currency1").addEventListener("change", (event) => {
+    observer.notify();
+  });
 })();
+
+
