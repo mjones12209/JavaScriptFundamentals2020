@@ -51,13 +51,13 @@ const getBooksApi = () => {
                "authors": ["Tillie Walden"],
                "image": "https://images-na.ssl-images-amazon.com/images/I/51Ukxxbo-mL._SX359_BO1,204,203,200_.jpg"
              }]
-            }
+          }
       );
     },50)
   }); 
 };
 
-getBooksApi().then((data)=>console.log(data)).catch((error)=>console.log(error));
+
 
 /**
  * @var {array} data an array of graphic novels
@@ -79,6 +79,12 @@ let data; // Do not change this line.
  * Call on the "getBooksApi()" here and set the variable "data" above
  * to the array of graphic novels that is in your promise's response.
  */
+
+getBooksApi().then((response)=>{
+  data = response.data;
+}).catch((error)=>console.log(error));
+
+
 
 module.exports = {
   getBooksApi,

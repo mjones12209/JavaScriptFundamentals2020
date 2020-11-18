@@ -64,8 +64,8 @@ const studentGrades = [
 ];
 
 class TeacherGradeBook {
- constructor(array) {
-  this.studentGrades = array;
+ constructor(students) {
+  this.students = students;
  }
  debug = () => {
     studentGrades.forEach(student=>console.log(student));

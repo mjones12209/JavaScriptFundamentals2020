@@ -19,7 +19,7 @@
  * // [ {firstName:'jane',lastName:'doe',grades:[100,100,100,100]}, {firstName:'James',lastName:'Bond', grades:[90,90,90,90]} ]
  */
 
-// const { studentGrades } = require("./students");
+const { studentGrades } = require("./students");
 
 const students = [
   {
@@ -85,6 +85,7 @@ const TeacherGradeBook = (() => {
   };
 })();
 
+console.log(TeacherGradeBook.getFailingStudents())
 
 
 module.exports = {
