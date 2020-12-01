@@ -277,7 +277,9 @@ const greet = () => {
   alert("It works!");
 };
 
-greet();
+window.setTimeout(() => {
+  greet();
+}, 5000);
 ```
 
 Now run `npm run build`. If you are on Windows, open _index.html_ in Internet Explorer. You should still see the alert popup.
@@ -362,7 +364,7 @@ greet();
 Install the library _node-sass_ and all of the loaders needed to get SASS to work with Webpack.
 
 ```bash
-npm install node-sass sass-loader style-loader css-loader webpack --save-dev
+npm install node-sass sass-loader style-loader css-loader --save-dev
 ```
 
 Now add this to the rules section of your _.webpack.config.js_ so that Webpack will load and build CSS too.

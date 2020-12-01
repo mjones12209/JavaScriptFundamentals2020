@@ -219,7 +219,7 @@ Please let Jamal and Matina known by **December 11th**. You must message them ov
 You will need to [create a new public Github repository](https://help.github.com/en/articles/create-a-repo) for this project. It must be public. You should also include a _README.md_ and _.gitignore_ file.
 
 Your _README.md_ file should be written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). This should be written for employers who may be looking at your work. Describe your project and explain how to get started. You can find an example template of a _README.MD_ here:
-https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+https://github.com/othneildrew/Best-README-Template
 
 You can generate _.gitignore_ file with [gitignore.io](https://www.toptal.com/developers/gitignore). If you have a _node_modules_ folder, be sure to include it in your _.gitignore_.
 
