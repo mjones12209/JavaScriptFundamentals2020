@@ -247,7 +247,7 @@ AlbanyCanCode will host your project in a public space and they will be sharing 
 
 ## Graduation and Project Showcase
 
-There will be a virtual graduation and networking ceremony in January. You will receive an email from AlbanyCanCode with more information about this as we get closer to the date.
+There will be a virtual graduation and networking ceremony on January 14th, from 4PM-5:30PM. You will receive an email from AlbanyCanCode with more information about this as we get closer to the date.
 
 ## Project Help
 
