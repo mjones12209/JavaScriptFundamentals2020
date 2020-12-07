@@ -1,0 +1,12 @@
+{
+  "name": "27-unit-testing",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha ./*.spec.js"
+  },
+  "private": true,
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}
